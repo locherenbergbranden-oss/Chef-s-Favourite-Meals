@@ -1,0 +1,445 @@
+
+/* =================================
+   CHEF'S FAVOURITE MEALS
+   PREMIUM RESTAURANT DESIGN
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --background: #090d12;
+    --surface: #141c25;
+    --surface-light: #1d2935;
+    --gold: #f5b942;
+    --gold-light: #ffd477;
+    --white: #ffffff;
+    --muted: #a8b2bd;
+    --green: #55d68b;
+    --red: #ff7070;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background:
+        radial-gradient(ellipse at top left, #26303a 0%, transparent 45%),
+        radial-gradient(ellipse at bottom right, #302416 0%, transparent 40%),
+        var(--background);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.header {
+    padding: 30px 20px;
+    text-align: center;
+    background: rgba(15, 22, 30, 0.9);
+    border-bottom: 1px solid rgba(245, 185, 66, 0.4);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(25px, 4vw, 38px);
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: var(--muted);
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+/* =================================
+   MAIN CONTENT
+================================= */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+    animation: fadeIn 0.8s ease;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.welcome h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 45px);
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.welcome h1 span {
+    color: var(--gold);
+}
+
+.welcome p {
+    color: var(--muted);
+    font-size: 17px;
+}
+
+/* =================================
+   CARDS
+================================= */
+
+.card {
+    position: relative;
+    background: linear-gradient(
+        145deg,
+        rgba(29, 41, 53, 0.95),
+        rgba(15, 23, 32, 0.95)
+    );
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 18px;
+    border: 1px solid rgba(245, 185, 66, 0.2);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        var(--gold),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(245, 185, 66, 0.65);
+    box-shadow: 0 15px 40px rgba(245, 185, 66, 0.08);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+/* =================================
+   INPUTS
+================================= */
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    color: #dce2e8;
+    font-weight: 600;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    padding: 16px 18px;
+    border-radius: 10px;
+    border: 1px solid #455463;
+    background: #0d141c;
+    color: var(--white);
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: #778594;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(245, 185, 66, 0.12);
+    background: #121d28;
+}
+
+/* =================================
+   BUTTONS
+================================= */
+
+button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(
+        135deg,
+        var(--gold-light),
+        #e89b20
+    );
+    color: #17120a;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(245, 185, 66, 0.3);
+    filter: brightness(1.1);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* =================================
+   MESSAGES
+================================= */
+
+.message {
+    margin-top: 18px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: var(--gold-light);
+    background: rgba(245, 185, 66, 0.07);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.message:empty {
+    display: none;
+}
+
+.success {
+    color: var(--green);
+    background: rgba(85, 214, 139, 0.08);
+}
+
+.error {
+    color: var(--red);
+    background: rgba(255, 112, 112, 0.08);
+}
+
+
+/* =================================
+   SELECTED MEAL IMAGE
+================================= */
+
+#selectedMeal img {
+    width: 100%;
+    max-width: 450px;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(245, 185, 66, 0.5);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.7s ease;
+    transition: transform 0.3s ease;
+}
+
+#selectedMeal img:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+    #selectedMeal img {
+        height: 210px;
+    }
+}
+
+
+/* =================================
+   SELECTED MEAL
+================================= */
+
+#selectedMeal {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 22px;
+    border-radius: 12px;
+    line-height: 1.8;
+    animation: fadeIn 0.5s ease;
+}
+
+#selectedMeal h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+/* =================================
+   OUTSTANDING ORDERS
+================================= */
+
+#orderList {
+    display: grid;
+    gap: 14px;
+}
+
+.order-item {
+    background: linear-gradient(
+        110deg,
+        #243341,
+        #18232e
+    );
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--gold);
+    line-height: 1.8;
+    transition: all 0.3s ease;
+    animation: slideIn 0.4s ease;
+}
+
+.order-item:hover {
+    transform: translateX(5px);
+    background: #293c4b;
+}
+
+.order-item strong {
+    color: var(--gold);
+    font-size: 16px;
+}
+
+.order-item p {
+    color: #d5dce3;
+}
+
+.empty-message {
+    color: var(--muted);
+    padding: 15px 0;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    background: #111923;
+    border-top: 1px solid rgba(245, 185, 66, 0.2);
+    text-align: center;
+    padding: 25px 15px;
+    color: var(--muted);
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 21px;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .welcome h1 {
+        font-size: 29px;
+    }
+
+    .welcome p {
+        font-size: 14px;
+    }
+
+    .header p {
+        font-size: 12px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

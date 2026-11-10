@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chef's Favourite Meals - Meal ordering application">
+    <title>Chef's Favourite Meals</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">🍽️ Chef's Favourite Meals</div>
+        <p>Fresh meals. Simple ordering.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <h1>Welcome to the Chef's Kitchen</h1>
+            <p>Tell us your favourite ingredient and let our chef surprise you!</p>
+        </section>
+
+        <!-- Place an order -->
+        <section class="card">
+            <h2>🥘 Place a New Order</h2>
+
+            <form id="orderForm">
+                <label for="ingredient">Enter your main ingredient:</label>
+
+                <div class="input-group">
+                    <input
+                        type="text"
+                        id="ingredient"
+                        placeholder="Example: chicken, beef, lemon"
+                        required
+                    >
+
+                    <button type="submit" id="orderButton">
+                        Find My Meal
+                    </button>
+                </div>
+            </form>
+
+            <p id="orderMessage" class="message" aria-live="polite"></p>
+        </section>
+
+        <!-- Current meal -->
+        <section class="card">
+            <h2>👨‍🍳 Your Selected Meal</h2>
+            <div id="selectedMeal">
+                <p>No meal selected yet. Place an order to get started!</p>
+            </div>
+        </section>
+
+        <!-- Incomplete orders -->
+        <section class="card">
+            <h2>📋 Outstanding Orders</h2>
+
+            <div id="orderList">
+                <p>No outstanding orders.</p>
+            </div>
+        </section>
+
+        <!-- Complete an order -->
+        <section class="card">
+            <h2>✅ Complete an Order</h2>
+
+            <form id="completeForm">
+                <label for="orderNumber">
+                    Enter an order number (enter 0 to skip):
+                </label>
+
+                <div class="input-group">
+                    <input
+                        type="number"
+                        id="orderNumber"
+                        min="0"
+                        step="1"
+                        placeholder="Order number"
+                        required
+                    >
+
+                    <button type="submit">
+                        Update Order
+                    </button>
+                </div>
+            </form>
+
+            <p id="completeMessage" class="message" aria-live="polite"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Chef's Favourite Meals | Powered by TheMealDB</p>
+    </footer>
+
+</body>
+</html>
