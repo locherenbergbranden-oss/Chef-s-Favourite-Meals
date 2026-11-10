@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chef's Favourite Meals</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="hero">
+
+        <nav class="navbar">
+            <h2>🍽️ Chef's Kitchen</h2>
+            <span class="status">● Kitchen Online</span>
+        </nav>
+
+        <div class="hero-content">
+            <p class="eyebrow">RESTAURANT ORDER SYSTEM</p>
+
+            <h1>
+                Chef's Favourite
+                <span>Meals.</span>
+            </h1>
+
+            <p>
+                Discover delicious meals and manage
+                your kitchen orders.
+            </p>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- INGREDIENT SEARCH -->
+        <section class="panel search-panel">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">01 / DISCOVER</p>
+                    <h2>Find a favourite meal</h2>
+                    <p>Enter a main ingredient to discover meals.</p>
+                </div>
+
+                <span class="heading-icon">🥘</span>
+            </div>
+
+
+            <form id="ingredientForm">
+
+                <label for="ingredientInput">
+                    Main ingredient
+                </label>
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        id="ingredientInput"
+                        placeholder="e.g. Chicken breast"
+                        required
+                    >
+
+                    <button type="submit" id="searchButton">
+                        Find Meals →
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <div
+                id="searchMessage"
+                class="message"
+                aria-live="polite">
+            </div>
+
+
+            <!-- SELECTED MEAL -->
+            <div id="mealResult" class="meal-result" hidden>
+
+                <div>
+                    <p class="eyebrow">
+                        YOUR RANDOMLY SELECTED MEAL
+                    </p>
+
+                    <h3 id="mealName"></h3>
+                </div>
+
+                <span class="meal-emoji">🍲</span>
+
+            </div>
+
+
+            <button
+                id="placeOrderButton"
+                class="place-order"
+                hidden>
+
+                Place This Order
+
+            </button>
+
+        </section>
+
+
+
+        <!-- OUTSTANDING ORDERS -->
+        <section class="panel orders-panel">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">02 / MANAGEMENT</p>
+                    <h2>Outstanding orders</h2>
+                    <p>Orders waiting to be completed.</p>
+                </div>
+
+                <span class="heading-icon">📋</span>
+
+            </div>
+
+
+            <!-- ORDER STATISTICS -->
+            <div class="order-stats">
+
+                <div>
+                    <span id="totalOrders">0</span>
+                    <p>Incomplete orders</p>
+                </div>
+
+                <div>
+                    <span id="lastOrder">0</span>
+                    <p>Last order number</p>
+                </div>
+
+            </div>
+
+
+            <!-- ORDER LIST -->
+            <div id="ordersList" class="orders-list">
+
+                <p class="empty-message">
+                    No outstanding orders yet.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- COMPLETE ORDERS -->
+        <section class="panel complete-panel">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">03 / COMPLETION</p>
+                    <h2>Complete an order</h2>
+                    <p>
+                        Enter an order number to mark it as complete.
+                    </p>
+                </div>
+
+                <span class="heading-icon">✅</span>
+
+            </div>
+
+
+            <form id="completeForm">
+
+                <label for="orderNumberInput">
+                    Order number
+                </label>
+
+                <div class="input-group">
+
+                    <input
+                        type="number"
+                        id="orderNumberInput"
+                        placeholder="Enter order number"
+                        min="0"
+                        step="1"
+                        required
+                    >
+
+                    <button type="submit">
+                        Update Order
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <div
+                id="completionMessage"
+                class="message"
+                aria-live="polite">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            Chef's Kitchen © 2026 |
+            Powered by TheMealDB API
+        </p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="app.js"></script>
+
+</body>
+</html>
